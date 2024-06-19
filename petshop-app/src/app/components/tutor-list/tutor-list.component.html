@@ -1,10 +1,12 @@
 <div>
   <h2>Tutor List</h2>
   <ul>
+    <!--trata-se de um loop para iterar a lista de tutores e exibir cada um deles-->
     <li *ngFor="let tutor of tutors">
       {{ tutor.name }} - {{ tutor.phone }}
-      <button class="edit" (click)="editTutor(tutor.id)">Edit</button>
-      <button class="delete" (click)="deleteTutor(tutor.id)">Delete</button>
+      <!--Criar o botão de alterar e excluir, chamando a função editTutor e deleteTutor-->
+      <button class="edit" (click)="editTutor(tutor.id)">Alterar</button>
+      <button class="delete" (click)="deleteTutor(tutor.id)">Excluir</button>
     </li>
   </ul>
 </div>
