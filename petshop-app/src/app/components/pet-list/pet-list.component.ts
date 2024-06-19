@@ -22,13 +22,15 @@ export class PetListComponent implements OnInit {
   editPet(petId: string): void {
     this.router.navigate(['/pets/edit', petId]);
   }
-
+  //Função para deletar um pet com base no ID
   deletePet(petId: string): void {
+    //trata-se de uma confirmação se realmente deseja deletar o pet
     if (confirm('Are you sure you want to delete this pet?')) {
       this.petService.deletePet(petId).then(() => {
         console.log('Pet deleted successfully');
         this.pets = this.pets.filter(pet => pet.id !== petId);
       }).catch(error => {
+        //criado o cath caso haja algum erro ao excluir o pet
         console.error('Error deleting pet: ', error);
       });
     }
